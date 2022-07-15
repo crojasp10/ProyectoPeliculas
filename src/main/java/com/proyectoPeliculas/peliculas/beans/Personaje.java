@@ -36,11 +36,8 @@ public class Personaje {
     private String historia;
 
     @JsonIgnore
-    @ManyToMany(cascade =  CascadeType.ALL,fetch = FetchType.EAGER )
-    @JoinTable(name = "Personaje_Pelicula",
-            joinColumns = { @JoinColumn(name = "personaje_id") },
-            inverseJoinColumns = { @JoinColumn(name = "pelicula_id") })
-    List<Pelicula> peliculas ;
+    @OneToMany (mappedBy = "personaje",cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<PersonajePelicula> peliculasPersonaje;
 
 
 

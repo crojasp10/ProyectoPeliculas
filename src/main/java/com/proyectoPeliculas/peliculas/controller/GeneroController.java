@@ -17,17 +17,13 @@ public class GeneroController {
     @Autowired
     GeneroRepository generoRepository;
 
-
-
-    @PostMapping("/newPersonaje")
+    @PostMapping("/newGenero")
     @ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity<Genero> insertarGenero(@RequestBody Genero genero) {
 
         return ResponseEntity.ok(generoRepository.save(genero));
 
     }
-
-
 
 
 

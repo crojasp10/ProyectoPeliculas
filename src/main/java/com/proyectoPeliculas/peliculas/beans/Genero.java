@@ -18,7 +18,7 @@ import java.util.List;
 public class Genero {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
     private int id;
     @Column(name="nombre")
@@ -26,9 +26,7 @@ public class Genero {
     @Column(name="imagen")
     private String imagen;
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "genero",cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private List<Pelicula> peliculas;
+
 
 
 }

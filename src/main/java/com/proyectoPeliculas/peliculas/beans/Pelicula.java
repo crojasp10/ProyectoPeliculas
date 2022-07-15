@@ -22,7 +22,7 @@ public class Pelicula {
 
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
     private int id;
     @Column(name="imagen")
@@ -36,13 +36,15 @@ public class Pelicula {
 
 
 
-    @ManyToOne(  fetch = FetchType.EAGER,optional = false)
+    @ManyToOne(  fetch = FetchType.LAZY,optional = false)
     @JoinColumn(name = "genero_id",referencedColumnName = "id")
     private Genero genero;
 
 
-    @ManyToMany(mappedBy = "peliculas",fetch = FetchType.EAGER)
-    private List<Personaje> personajes;
+    @JsonIgnore
+    @OneToMany (mappedBy = "pelicula",cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<PersonajePelicula> personajesPelicula;
+
 
 
 
