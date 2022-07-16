@@ -36,15 +36,15 @@ public class Pelicula {
 
 
 
-    @ManyToOne(  fetch = FetchType.LAZY,optional = false)
+    @ManyToOne(  fetch = FetchType.EAGER,optional = false)
     @JoinColumn(name = "genero_id",referencedColumnName = "id")
     private Genero genero;
 
-
+/*
     @JsonIgnore
     @OneToMany (mappedBy = "pelicula",cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<PersonajePelicula> personajesPelicula;
-
+*/
 
 
 

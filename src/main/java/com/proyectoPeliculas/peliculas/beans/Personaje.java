@@ -35,9 +35,7 @@ public class Personaje {
     @Column(name = "historia")
     private String historia;
 
-    @JsonIgnore
-    @OneToMany (mappedBy = "personaje",cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private List<PersonajePelicula> peliculasPersonaje;
+
 
 
 
